@@ -1,5 +1,7 @@
+// Core
 import mongoose from 'mongoose';
 
+// Mongoose Schema
 const postSchema = mongoose.Schema({
     title: String,
     message: String,

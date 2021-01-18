@@ -1,5 +1,7 @@
+// Module
 import PostMessage from '../modules/postMessage.js';
 
+// Controller getPosts
 export const getPosts = async (req, res) => {
     // res.send('THIS WORKS!');
     try {
@@ -13,6 +15,7 @@ export const getPosts = async (req, res) => {
     }
 };
 
+// Controller createPost
 export const createPost = async (req, res) => {
     // res.send('POST CREATION!');
     const post = req.body;
