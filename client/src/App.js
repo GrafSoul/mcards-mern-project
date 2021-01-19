@@ -1,7 +1,11 @@
 // Core
-import React from 'react';
+import React, { useEffect } from 'react';
 // Material UI
 import { Container, AppBar, Typography, Grow, Grid } from '@material-ui/core';
+// Redux
+import { useDispatch } from 'react-redux';
+// Actions
+import { getPosts } from './store/actions/posts';
 // Components
 import Posts from './components/Posts/Posts.js';
 import Form from './components/Form/Form.js';
@@ -12,6 +16,12 @@ import memories from './components/images/memories.png';
 
 const App = () => {
     const classes = useStyles();
+    const dispatch = useDispatch();
+
+    useEffect(() => {
+        dispatch(getPosts());
+    }, [dispatch]);
+
     return (
         <Container maxWidth="lg">
             <AppBar
