@@ -10,4 +10,4 @@ Made on the basis of video lessons [JavaScriptMastery Part 1], [JavaScriptMaster
 [javascriptmastery part 2]: https://www.youtube.com/watch?v=aibtHnbeuio&ab_channel=JavaScriptMastery
 [javascriptmastery part 3]: https://www.youtube.com/watch?v=LKlO8vLvUao&ab_channel=JavaScriptMastery
 
-© 2020 | Memories MERN Project
+© 2021 | Memories MERN Project
