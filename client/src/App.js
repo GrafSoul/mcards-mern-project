@@ -10,6 +10,7 @@ import { getPosts } from './store/actions/posts';
 import Posts from './components/Posts/Posts.js';
 import Form from './components/Form/Form.js';
 // Styles
+import './index.css';
 import useStyles from './styles';
 // Images
 import memories from './components/images/memories.png';
