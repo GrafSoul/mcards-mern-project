@@ -1,4 +1,3 @@
-/* eslint-disable no-unused-vars */
 // Core
 import React, { useState, useEffect } from 'react';
 // Redux
