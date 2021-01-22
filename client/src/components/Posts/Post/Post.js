@@ -3,7 +3,7 @@ import React from 'react';
 import moment from 'moment';
 // Redux
 import { useDispatch } from 'react-redux';
-import { deletePost } from '../../../store/actions/posts';
+import { deletePost, likePost } from '../../../store/actions/posts';
 // Material UI
 import {
     Card,
@@ -54,13 +54,19 @@ const Post = ({ post, setCurrentId }) => {
                 {post.title}
             </Typography>
             <CardContent>
-                <Typography variant="h5" gutterBottom>
+                <Typography variant="body2" color="textSecondary" gutterBottom>
                     {post.message}
                 </Typography>
             </CardContent>
             <CardActions className={classes.cardActions}>
-                <Button size="small" color="primary" onClick={() => {}}>
-                    <ThumbUpAltIcon fontSize="small" /> Like {post.likeCount}
+                <Button
+                    size="small"
+                    color="primary"
+                    onClick={() => dispatch(likePost(post._id))}
+                >
+                    <ThumbUpAltIcon fontSize="small" />
+                    &nbsp;Like&nbsp;
+                    {post.likeCount}
                 </Button>
                 <Button
                     size="small"

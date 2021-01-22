@@ -102,7 +102,10 @@ const Form = ({ currentId, setCurrentId }) => {
                     className={classes.fileInput}
                     value={postData.tags}
                     onChange={(e) =>
-                        setPostData({ ...postData, tags: e.target.value })
+                        setPostData({
+                            ...postData,
+                            tags: e.target.value.split(','),
+                        })
                     }
                 />
                 <div className={classes.fileInput}>
