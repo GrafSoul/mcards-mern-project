@@ -1,13 +1,13 @@
+// Environment
+const dotenv = require('dotenv');
+dotenv.config();
+
 // Core
 import path from 'path';
 import express from 'express';
 import bodyParser from 'body-parser';
 import cors from 'cors';
 import mongoose from 'mongoose';
-
-// Environment
-import dotenv from 'dotenv';
-dotenv.config();
 
 // Routes
 import postRoutes from './routes/posts.js';
