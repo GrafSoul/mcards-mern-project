@@ -12,7 +12,6 @@ import {
 import LockOutlinedIcon from '@material-ui/icons/LockOutlined';
 // Components
 import Input from './Input';
-
 // Styles
 import useStyles from './styles';
 

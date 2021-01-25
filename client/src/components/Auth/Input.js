@@ -2,6 +2,7 @@
 import React from 'react';
 // Material UI
 import { TextField, Grid, InputAdornment, IconButton } from '@material-ui/core';
+// Material Icons
 import Visibility from '@material-ui/icons/Visibility';
 import VisibilityOff from '@material-ui/icons/VisibilityOff';
 
