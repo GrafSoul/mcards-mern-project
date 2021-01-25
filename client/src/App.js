@@ -1,19 +1,20 @@
 // Core
 import React, { useState, useEffect } from 'react';
-// Material UI
-import { Container, AppBar, Typography, Grow, Grid } from '@material-ui/core';
+// Router
+import { BrowserRouter, Route, Switch } from 'react-router-dom';
 // Redux
 import { useDispatch } from 'react-redux';
 // Actions
 import { getPosts } from './store/actions/posts';
+// Material UI
+import { Container, Grow, Grid } from '@material-ui/core';
 // Components
+import Navbar from './components/Navbar/Navbar.js';
 import Posts from './components/Posts/Posts.js';
 import Form from './components/Form/Form.js';
 // Styles
 import './index.css';
 import useStyles from './styles';
-// Images
-import memories from './components/images/memories.png';
 
 const App = () => {
     const [currentId, setCurrentId] = useState(null);
@@ -26,25 +27,7 @@ const App = () => {
 
     return (
         <Container maxWidth="lg">
-            <AppBar
-                className={classes.appBar}
-                position="static"
-                color="inherit"
-            >
-                <Typography
-                    className={classes.heading}
-                    variant="h2"
-                    align="center"
-                >
-                    Memories
-                </Typography>
-                <img
-                    className={classes.image}
-                    src={memories}
-                    alt="Memories"
-                    height={60}
-                />
-            </AppBar>
+            <Navbar />
             <Grow in>
                 <Container>
                     <Grid
