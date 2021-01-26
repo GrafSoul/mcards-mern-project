@@ -1,7 +1,10 @@
 // Core
 import axios from 'axios';
 
-const url = 'http://localhost:5000/posts';
+const url =
+    window.location.href === 'http://localhost:3000'
+        ? 'http://localhost:5000/posts'
+        : '/posts';
 
 export const fetchPosts = () => axios.get(url);
 export const createPost = (newPost) => axios.post(url, newPost);
