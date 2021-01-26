@@ -1,5 +1,7 @@
 // Core
 import React, { useState } from 'react';
+// Google API
+import { GoogleLogin } from 'react-google-login';
 // Material UI
 import {
     Avatar,
@@ -12,18 +14,37 @@ import {
 import LockOutlinedIcon from '@material-ui/icons/LockOutlined';
 // Components
 import Input from './Input';
+import Icon from './Icon';
 // Styles
 import useStyles from './styles';
+// Environment
+import dotenv from 'dotenv';
+dotenv.config();
 
 const Auth = () => {
     const classes = useStyles();
     const [showPassword, setShowPassword] = useState(false);
-    const isSignUp = true;
+    const [isSignUp, setIsSignUp] = useState(false);
 
     const handleShowPassword = () =>
         setShowPassword((prevShowPassword) => !prevShowPassword);
 
+    const handleSwitchMode = () => {
+        setIsSignUp((prevIsSignUp) => !prevIsSignUp);
+        setShowPassword(false);
+    };
+
+    const handleGoogleSuccess = async (res) => {
+        console.log(res);
+    };
+
+    const handleGoogleFailure = (error) => {
+        console.log('Google Sign In was unsuccessful. Try again later!');
+        console.log('Error: ', error);
+    };
+
     const handleSubmit = () => {};
+
     const handleChange = () => {};
 
     return (
@@ -86,6 +107,36 @@ const Auth = () => {
                     >
                         {isSignUp ? 'Sign Up' : 'Sign In'}
                     </Button>
+                    <GoogleLogin
+                        clientId={process.env.REACT_APP_GOOGLE_ID}
+                        onFailure={handleGoogleFailure}
+                        onSuccess={handleGoogleSuccess}
+                        cookiePolicy="single_host_origin"
+                        render={(renderProps) => (
+                            <Button
+                                className={classes.googleButton}
+                                fullWidth
+                                variant="contained"
+                                color="primary"
+                                onClick={renderProps.onClick}
+                                disabled={renderProps.disabled}
+                                startIcon={<Icon />}
+                            >
+                                {isSignUp
+                                    ? 'Google Sign Up '
+                                    : 'Google Sign In'}
+                            </Button>
+                        )}
+                    />
+                    <Grid container justify="center">
+                        <Grid item>
+                            <Button onClick={handleSwitchMode}>
+                                {isSignUp
+                                    ? 'Already have an account? Sign In'
+                                    : "Don't have an account? Sign Up"}
+                            </Button>
+                        </Grid>
+                    </Grid>
                 </form>
             </Paper>
         </Container>
