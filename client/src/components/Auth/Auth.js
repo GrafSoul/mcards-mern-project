@@ -25,11 +25,20 @@ import useStyles from './styles';
 import dotenv from 'dotenv';
 dotenv.config();
 
+const initialSate = {
+    firstName: '',
+    lastName: '',
+    email: '',
+    password: '',
+    confirmPassword: '',
+};
+
 const Auth = () => {
     const classes = useStyles();
     const history = useHistory();
     const [showPassword, setShowPassword] = useState(false);
     const [isSignUp, setIsSignUp] = useState(false);
+    const [formData, setFormData] = useState(initialSate);
     const dispatch = useDispatch();
 
     const handleShowPassword = () =>
@@ -59,9 +68,14 @@ const Auth = () => {
         console.log('Error: ', error);
     };
 
-    const handleSubmit = () => {};
+    const handleSubmit = (e) => {
+        e.preventDefault();
+        console.log(formData);
+    };
 
-    const handleChange = () => {};
+    const handleChange = (e) => {
+        setFormData({ ...formData, [e.target.name]: e.target.value });
+    };
 
     return (
         <Container component="main" maxWidth="xs">
@@ -85,8 +99,8 @@ const Auth = () => {
                                 />
 
                                 <Input
-                                    name="secondName"
-                                    label="Second Name"
+                                    name="lastName"
+                                    label="Last Name"
                                     handleChange={handleChange}
                                     half
                                 />
