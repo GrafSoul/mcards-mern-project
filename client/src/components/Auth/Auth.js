@@ -1,5 +1,9 @@
 // Core
 import React, { useState } from 'react';
+// Router
+import { useHistory } from 'react-router-dom';
+// Redux
+import { useDispatch } from 'react-redux';
 // Google API
 import { GoogleLogin } from 'react-google-login';
 // Material UI
@@ -23,8 +27,10 @@ dotenv.config();
 
 const Auth = () => {
     const classes = useStyles();
+    const history = useHistory();
     const [showPassword, setShowPassword] = useState(false);
     const [isSignUp, setIsSignUp] = useState(false);
+    const dispatch = useDispatch();
 
     const handleShowPassword = () =>
         setShowPassword((prevShowPassword) => !prevShowPassword);
@@ -35,7 +41,17 @@ const Auth = () => {
     };
 
     const handleGoogleSuccess = async (res) => {
-        console.log(res);
+        const result = await res?.profileObj; // undefined
+        const token = await res?.tokenId; // undefined
+        console.log(result);
+        console.log(token);
+
+        try {
+            dispatch({ type: 'AUTH', data: { result, token } });
+            history.push('/');
+        } catch (error) {
+            console.log(error);
+        }
     };
 
     const handleGoogleFailure = (error) => {
