@@ -1,6 +1,5 @@
 // Core
 import express from 'express';
-
 // Controllers
 import {
     getPosts,
@@ -9,7 +8,6 @@ import {
     deletePost,
     likePost,
 } from '../controllers/posts.js';
-
 // Routes
 const router = express.Router();
 router.get('/', getPosts);

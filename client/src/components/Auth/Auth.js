@@ -4,6 +4,7 @@ import React, { useState } from 'react';
 import { useHistory } from 'react-router-dom';
 // Redux
 import { useDispatch } from 'react-redux';
+import { signUp, signIn } from '../../store/actions/auth';
 // Google API
 import { GoogleLogin } from 'react-google-login';
 // Material UI
@@ -70,7 +71,12 @@ const Auth = () => {
 
     const handleSubmit = (e) => {
         e.preventDefault();
-        console.log(formData);
+
+        if (isSignUp) {
+            dispatch(signUp(formData, history));
+        } else {
+            dispatch(signIn(formData, history));
+        }
     };
 
     const handleChange = (e) => {
