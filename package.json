@@ -1,7 +1,7 @@
 {
-  "name": "memories-server",
+  "name": "mcards-server",
   "version": "1.0.0",
-  "description": "Server for Memories App",
+  "description": "Server for MCard App",
   "main": "./server/index.js",
   "type": "module",
   "scripts": {

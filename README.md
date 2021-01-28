@@ -1,10 +1,10 @@
-# Memories Cards - MERN Project (React + Redux, Node, Express, MongoDB)
+# MCards - MERN Project (React + Redux, Node, Express, MongoDB)
 
 A simple Web application with a CRUD system and using a stack - React + Redux, Node, Express, MongoDB
 
 ### Demo
 
-Heroku Hosting - [Memories Cards]
+Heroku Hosting - [MCards]
 
 ### Clone, Install, Development & Start
 
@@ -61,4 +61,4 @@ Made on the basis of video lessons JavaScriptMastery:
 
 [nodejs]: https://nodejs.org/
 [yarn]: https://yarnpkg.com/
-[memories cards]: https://mcard.herokuapp.com/
+[mcards]: https://mcard.herokuapp.com/
