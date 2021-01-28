@@ -11,7 +11,7 @@ import {
 } from '../controllers/posts.js';
 
 // Middleware
-import auth from '../middleware/auth';
+import auth from '../middleware/auth.js';
 
 // Routes
 const router = express.Router();
