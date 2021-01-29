@@ -2,9 +2,12 @@
 
 A simple Web application with a CRUD system and using a stack - React + Redux, Node, Express, MongoDB
 
-### Demo
+# <span style="color:red; font-weight: bold;">The app is being developed! Does not work!</span>
 
+<!--
+### Demo
 Heroku Hosting - [MCards]
+ -->
 
 ### Clone, Install, Development & Start
 
