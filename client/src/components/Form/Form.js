@@ -91,6 +91,7 @@ const Form = ({ currentId, setCurrentId }) => {
                     name="message"
                     variant="outlined"
                     label="Message"
+                    multiline
                     fullWidth
                     className={classes.fileInput}
                     value={postData.message}
