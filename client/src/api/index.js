@@ -1,11 +1,22 @@
 // Core
 import axios from 'axios';
+
 const baseURL =
     window.location.href === 'http://localhost:3000/auth'
         ? 'http://localhost:5000'
         : window.location.href;
+
 const API = axios.create({ baseURL: baseURL });
-// const API = axios.create({ baseURL: 'http://localhost:5000' });
+
+API.interceptors.request.use((req) => {
+    if (localStorage.getItem('profile')) {
+        req.headers.Authorization = `Bearer ${
+            JSON.parse(localStorage.getItem('profile')).token
+        }`;
+    }
+
+    return req;
+});
 
 // Posts
 export const fetchPosts = () => API.get('/posts');
